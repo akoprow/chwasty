@@ -6,7 +6,8 @@ angular.module('chwasty', ['ngRoute', 'ngAnimate'])
           templateUrl: 'main.html'
         })
         .when('/katalog', {
-          templateUrl: 'catalogue.html'
+          templateUrl: 'catalogue.html',
+          controller: 'CatalogueCtrl'
         })
         .otherwise('/');
       $locationProvider.html5Mode(false);
@@ -20,4 +21,12 @@ angular.module('chwasty', ['ngRoute', 'ngAnimate'])
     $scope.isActive = function(menuItem) {
       return _.endsWith($location.absUrl(), menuItem.href);
     };
+  }])
+
+  .controller('CatalogueCtrl', ['$scope', '$http', function($scope, $http) {
+    $scope.plants = [];
+
+    $http.get('data/plants.json').success(function(data) {
+      $scope.plants = data;
+    });
   }]);

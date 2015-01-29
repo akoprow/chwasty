@@ -1,0 +1,18 @@
+[
+{
+  "name": "Kwiatek",
+  "latin_name": "Kwiatkokus",
+  "description": "No kwiatek jak kwiatek. Czasem rośnie na łące. Czasem w lesie. Czasem żółty. Czasem czerwony. Ładne kwiatki.",
+  "size": "Maleńki"
+}, {
+  "name": "Dżewko",
+  "latin_name": "Trimbus",
+  "description": "Drzewka to na ogół w lesie. Duże drzewko nie jest złe. Trzepniesz sobie takie drzewko przed domem i od razu się człowiek dużo lepiej czuje. Serio serio.",
+  "size": "Wielgachne"
+}, {
+  "name": "Krzak",
+  "latin_name": "Krzakus",
+  "description": "Krzak przed domem z rana jak śmietana.",
+  "size": "Raczej średni"
+}
+]
