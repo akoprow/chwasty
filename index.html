@@ -9,15 +9,20 @@
     <!--CSS styles-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
     <link rel="stylesheet" href="css/style.css">
     <!--/CSS styles-->
 
     <!--Javascript files-->
+    <!--
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+    -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/lodash/3.0.0/lodash.compat.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular-animate.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular-route.min.js"></script>
+
+    <script type="text/javascript" src="js/all.js"></script>
     <!--/Javascript files-->
   </head>
   <body ng-app="chwasty">
@@ -35,9 +40,10 @@
           <a class="navbar-brand" href="#">Chwasty</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Strona główna</a></li>
-            <li><a href="#/katalog">Katalog</a></li>
+          <ul class="nav navbar-nav" ng-controller="NavCtrl">
+            <li ng-repeat="item in menuItems" ng-class="{ 'active': isActive(item) }">
+              <a ng-href="{{item.href}}" ng-bind="item.text"></a>
+            </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
